@@ -1,0 +1,30 @@
+﻿<Window x:Class="Sample01.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Sample01"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800"
+        xmlns:vm="clr-namespace:Sample01.ViewModel" 
+        >
+    
+    <Window.DataContext>
+        <vm:ViewModelClassMsg />
+    </Window.DataContext>
+    <Grid>
+        <Label x:Name="lblName" Margin="302,33,334,339" FontSize="20"/>
+        <TextBox HorizontalAlignment="Left" Height="19" Margin="278,132,0,0" Text ="{Binding Path = MessageArgument}" TextWrapping="Wrap" VerticalAlignment="Top" Width="191"/>
+        <Button Content="Send" HorizontalAlignment="Left" Height="17" Margin="342,184,0,0" VerticalAlignment="Top" Width="58" Command="{Binding AddNew}"/>
+        <TextBox HorizontalAlignment="Left" Height="18" Margin="276,235,0,0" Text="{Binding Path = AddedArgument}" TextWrapping="Wrap" VerticalAlignment="Top" Width="190"/>
+        <ListView  Margin="214,289,280,10" ItemsSource="{Binding AddedArgument}">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Message"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+
+    </Grid>
+    
+</Window>
