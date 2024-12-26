@@ -1,0 +1,10 @@
+# Ignore system and IDE-specific files
+.gitconfig
+.vscode/
+.ipython/
+AppData/
+*.lnk
+*.pdf
+*.zip
+*Desktop.ini
+*.png
